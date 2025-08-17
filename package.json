@@ -1,39 +1,55 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "9be1492e50c73fc7313acd176356b7d8971b7b3c4185d5c0356e2d07dc4786bb",
   "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.7.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-brands-svg-icons": "^7.0.0",
+    "@fortawesome/free-regular-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
+    "@kombai/react-error-boundary": "^1.1.0",
+    "@mui/material": "^7.3.1",
+    "@mui/x-charts": "^8.10.1",
+    "@mui/x-data-grid": "^8.10.1",
+    "@mui/x-date-pickers": "^8.10.0",
+    "@mui/x-tree-view": "^8.10.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "postcss": "^8.5.6",
+    "postcss-import": "^16.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.8.1",
+    "react-router-dom": "^7.8.1",
+    "tailwindcss": "^4.0.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "comment-json": "^4.2.5",
+    "env-cmd": "^10.1.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "rollup": "^4.44.1",
+    "vite": "^6.2.0",
+    "vite-plugin-static-copy": "^3.1.1"
+  },
+  "strictDependencies": {}
 }
