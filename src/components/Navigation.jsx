@@ -15,7 +15,10 @@ const StyledAppBar = styled(AppBar)(({ theme, scrolled }) => ({
     ? `1px solid ${theme.palette.primary.main}20` 
     : 'none',
   transition: 'all 0.3s ease',
-  padding: '0.5rem 0'
+  padding: '0.5rem 0',
+  [theme.breakpoints.down('md')]: {
+    padding: '0.25rem 0'
+  }
 }));
 
 const NavButton = styled(Button)(({ theme }) => ({
@@ -151,7 +154,11 @@ const Navigation = () => {
     <>
       <StyledAppBar position="fixed" scrolled={scrolled}>
         <div className="container mx-auto px-4">
-          <Toolbar sx={{ justifyContent: 'space-between', minHeight: '64px !important' }}>
+          <Toolbar sx={{ 
+            justifyContent: 'space-between', 
+            minHeight: { xs: '56px !important', md: '64px !important' },
+            padding: { xs: '0 8px', md: '0 16px' }
+          }}>
             {/* Logo */}
             <Logo onClick={() => handleNavClick('#hero-section')}>
               RKP

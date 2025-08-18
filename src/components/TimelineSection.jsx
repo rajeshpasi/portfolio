@@ -7,7 +7,13 @@ const TimelineContainer = styled(Box)(({ theme }) => ({
   background: `linear-gradient(135deg, 
     ${theme.palette.background.default} 0%, 
     ${theme.palette.primary.main}05 50%, 
-    ${theme.palette.secondary.main}05 100%)`
+    ${theme.palette.secondary.main}05 100%)`,
+  [theme.breakpoints.down('md')]: {
+    padding: '4rem 0'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '3rem 0'
+  }
 }));
 
 const TimelineWrapper = styled(Box)(({ theme }) => ({
@@ -70,12 +76,17 @@ const TimelineContent = styled(Box)(({ theme, position }) => ({
   },
   [theme.breakpoints.down('md')]: {
     width: '100%',
+    padding: '1.5rem',
     '&::before': {
       left: '-10px',
       right: 'auto',
       borderLeft: `10px solid ${theme.palette.background.paper}90`,
       borderRight: 'none'
     }
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '1.25rem',
+    borderRadius: '16px'
   }
 }));
 

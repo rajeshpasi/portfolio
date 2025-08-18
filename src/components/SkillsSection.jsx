@@ -15,7 +15,13 @@ const SkillsContainer = styled(Box)(({ theme }) => ({
   background: `linear-gradient(135deg, 
     ${theme.palette.background.default} 0%, 
     ${theme.palette.primary.main}05 50%, 
-    ${theme.palette.secondary.main}05 100%)`
+    ${theme.palette.secondary.main}05 100%)`,
+  [theme.breakpoints.down('md')]: {
+    padding: '4rem 0'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '3rem 0'
+  }
 }));
 
 const SkillCard = styled(Box)(({ theme }) => ({
@@ -32,6 +38,12 @@ const SkillCard = styled(Box)(({ theme }) => ({
     transform: 'translateY(-10px) scale(1.02)',
     boxShadow: `0 20px 40px ${theme.palette.primary.main}20`,
     border: `1px solid ${theme.palette.primary.main}40`
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: '1.5rem'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '1.25rem'
   }
 }));
 
@@ -72,6 +84,31 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   color: theme.palette.primary.main,
   transition: 'all 0.3s ease'
 }));
+
+// Skill Progress Bar Component
+const SkillProgressBar = ({ skill }) => {
+  return (
+    <ProgressContainer>
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-3">
+          <Box sx={{ color: skill.color, fontSize: '1.2rem' }}>
+            <FontAwesomeIcon icon={skill.icon} />
+          </Box>
+          <Typography variant="body1" sx={{ fontWeight: 500 }}>
+            {skill.name}
+          </Typography>
+        </div>
+        <Typography variant="body2" color="primary" sx={{ fontWeight: 600 }}>
+          {skill.level}%
+        </Typography>
+      </div>
+      <StyledLinearProgress 
+        variant="determinate" 
+        value={skill.level}
+      />
+    </ProgressContainer>
+  );
+};
 
 const skills = [
   { name: 'React.js', level: 90, icon: faReacteurope, color: '#61DAFB' },
@@ -137,7 +174,7 @@ const SkillsSection = () => {
         </Typography>
 
         {/* Tech Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
           {techCategories.map((category, index) => (
             <SkillCard key={index}>
               <IconWrapper>
@@ -163,7 +200,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Skill Progress Bars */}
-        <Box className="max-w-4xl mx-auto">
+        <Box className="max-w-6xl mx-auto">
           <Typography 
             variant="h4" 
             className="text-center mb-8"
@@ -173,27 +210,9 @@ const SkillsSection = () => {
             Proficiency Levels
           </Typography>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
             {skills.map((skill, index) => (
-              <ProgressContainer key={index}>
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-3">
-                    <Box sx={{ color: skill.color, fontSize: '1.2rem' }}>
-                      <FontAwesomeIcon icon={skill.icon} />
-                    </Box>
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                      {skill.name}
-                    </Typography>
-                  </div>
-                  <Typography variant="body2" color="primary" sx={{ fontWeight: 600 }}>
-                    {skill.level}%
-                  </Typography>
-                </div>
-                <StyledLinearProgress 
-                  variant="determinate" 
-                  value={skill.level}
-                />
-              </ProgressContainer>
+              <SkillProgressBar key={index} skill={skill} />
             ))}
           </div>
         </Box>

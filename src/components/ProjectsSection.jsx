@@ -6,7 +6,13 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ProjectsContainer = styled(Box)(({ theme }) => ({
   padding: '6rem 0',
-  background: theme.palette.background.default
+  background: theme.palette.background.default,
+  [theme.breakpoints.down('md')]: {
+    padding: '4rem 0'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '3rem 0'
+  }
 }));
 
 const ProjectCard = styled(Box)(({ theme }) => ({
@@ -35,7 +41,10 @@ const ProjectImage = styled('img')(({ theme }) => ({
   width: '100%',
   height: '200px',
   objectFit: 'cover',
-  transition: 'transform 0.4s ease'
+  transition: 'transform 0.4s ease',
+  [theme.breakpoints.down('sm')]: {
+    height: '180px'
+  }
 }));
 
 const ProjectOverlay = styled(Box)(({ theme }) => ({
@@ -183,7 +192,7 @@ const ProjectsSection = () => {
         </Typography>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4">
           {categories.map((category) => (
             <FilterButton
               key={category}
@@ -196,7 +205,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {filteredProjects.map((project) => (
             <ProjectCard key={project.id}>
               <div className="relative">
@@ -242,7 +251,7 @@ const ProjectsSection = () => {
                 </ProjectOverlay>
               </div>
               
-              <Box className="p-6">
+              <Box className="p-4 md:p-6">
                 <Typography 
                   variant="h6" 
                   color="primary"

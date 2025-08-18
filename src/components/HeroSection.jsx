@@ -8,11 +8,16 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   position: 'relative',
+  padding: '2rem 0',
   background: `linear-gradient(135deg, 
     ${theme.palette.background.default} 0%, 
     ${theme.palette.primary.main}10 50%, 
     ${theme.palette.secondary.main}10 100%)`,
   overflow: 'hidden',
+  [theme.breakpoints.down('md')]: {
+    minHeight: '90vh',
+    padding: '1rem 0'
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -65,7 +70,15 @@ const GlassCard = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   position: 'relative',
   zIndex: 1,
-  boxShadow: `0 8px 32px ${theme.palette.primary.main}10`
+  boxShadow: `0 8px 32px ${theme.palette.primary.main}10`,
+  [theme.breakpoints.down('md')]: {
+    padding: '2rem',
+    borderRadius: '16px'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '1.5rem',
+    margin: '0 1rem'
+  }
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({

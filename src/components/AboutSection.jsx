@@ -5,7 +5,13 @@ import { styled } from '@mui/material/styles';
 const AboutContainer = styled(Box)(({ theme }) => ({
   padding: '6rem 0',
   position: 'relative',
-  background: theme.palette.background.default
+  background: theme.palette.background.default,
+  [theme.breakpoints.down('md')]: {
+    padding: '4rem 0'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '3rem 0'
+  }
 }));
 
 const GlassCard = styled(Box)(({ theme }) => ({
@@ -19,6 +25,13 @@ const GlassCard = styled(Box)(({ theme }) => ({
   transition: 'transform 0.3s ease',
   '&:hover': {
     transform: 'translateY(-5px)'
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: '2rem',
+    borderRadius: '16px'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '1.5rem'
   }
 }));
 
@@ -51,16 +64,20 @@ const AboutSection = () => {
           About Me
         </Typography>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div className="flex justify-center lg:justify-end">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+          <div className="flex justify-center lg:justify-end order-2 lg:order-1">
             <StyledAvatar
               src="rajesh.png"
               alt="Rajesh Kumar Pasi - Professional Developer Photo"
-              sx={{ width: { xs: 180, md: 200 }, height: { xs: 180, md: 200 } }}
+              sx={{ 
+                width: { xs: 150, sm: 180, md: 200 }, 
+                height: { xs: 150, sm: 180, md: 200 } 
+              }}
             />
           </div>
           
-          <GlassCard>
+          <div className="order-1 lg:order-2">
+            <GlassCard>
             <Stack spacing={3}>
               <Typography 
                 variant="h4" 
@@ -128,7 +145,8 @@ const AboutSection = () => {
                 ))}
               </Box>
             </Stack>
-          </GlassCard>
+            </GlassCard>
+          </div>
         </div>
       </div>
     </AboutContainer>
