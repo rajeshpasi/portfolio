@@ -199,15 +199,24 @@ const ProjectsSection = () => {
           Featured Projects
         </Typography>
 
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-center mb-8 max-w-2xl mx-auto"
-          sx={{ fontSize: "1.1rem", lineHeight: 1.6 }}
-        >
-          A showcase of my work across web development, AI projects, and
-          academic achievements
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="text-center mb-8 max-w-2xl mx-auto"
+            align="center"
+            sx={{
+              fontSize: "1.1rem",
+              lineHeight: 1.6,
+              textAlign: "center",
+              mx: "auto",
+              width: "100%",
+            }}
+          >
+            A showcase of my work across web development, AI projects, and
+            academic achievements
+          </Typography>
+        </Box>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4">

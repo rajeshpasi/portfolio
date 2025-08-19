@@ -161,18 +161,27 @@ const SkillsSection = () => {
           Skills & Technologies
         </Typography>
 
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-center mb-12 max-w-2xl mx-auto"
-          sx={{ fontSize: "1.1rem", lineHeight: 1.6 }}
-        >
-          A comprehensive overview of my technical expertise and proficiency
-          levels
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="text-center mb-12 max-w-2xl mx-auto"
+            align="center"
+            sx={{
+              fontSize: "1.1rem",
+              lineHeight: 1.6,
+              textAlign: "center",
+              mx: "auto",
+              width: "100%",
+            }}
+          >
+            A comprehensive overview of my technical expertise and proficiency
+            levels
+          </Typography>
+        </Box>
 
         {/* Tech Categories */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12 mt-12">
           {techCategories.map((category, index) => (
             <SkillCard key={index}>
               <IconWrapper>
@@ -212,7 +221,7 @@ const SkillsSection = () => {
             Proficiency Levels
           </Typography>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mt-8">
             {skills.map((skill, index) => (
               <SkillProgressBar key={index} skill={skill} />
             ))}

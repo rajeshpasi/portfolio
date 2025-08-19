@@ -417,15 +417,25 @@ const ContactSection = () => {
           Let's Work Together
         </Typography>
 
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-center mb-12 max-w-2xl mx-auto"
-          sx={{ fontSize: "1.1rem", lineHeight: 1.6 }}
-        >
-          Have a project in mind or want to collaborate? I'd love to hear from
-          you!
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="text-center mb-12 max-w-2xl mx-auto p-4  my-4"
+            align="center"
+            sx={{
+              fontSize: "1.1rem",
+              lineHeight: 1.6,
+              textAlign: "center",
+              mx: "auto",
+              width: "100%",
+            }}
+            style={{ textAlign: "center" }}
+          >
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you!
+          </Typography>
+        </Box>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
           <ContactForm />

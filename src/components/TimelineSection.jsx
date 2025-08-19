@@ -174,15 +174,24 @@ const TimelineSection = () => {
           My Learning Journey
         </Typography>
 
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          className="text-center mb-12 max-w-2xl mx-auto"
-          sx={{ fontSize: "1.1rem", lineHeight: 1.6 }}
-        >
-          From curiosity to expertise - here's how my development journey has
-          evolved over the years
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="text-center mb-12 max-w-2xl mx-auto"
+            align="center"
+            sx={{
+              fontSize: "1.1rem",
+              lineHeight: 1.6,
+              textAlign: "center",
+              mx: "auto",
+              width: "100%",
+            }}
+          >
+            From curiosity to expertise - here's how my development journey has
+            evolved over the years
+          </Typography>
+        </Box>
 
         <TimelineWrapper>
           {timelineData.map((item, index) => (
