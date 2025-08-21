@@ -355,7 +355,7 @@ const ContactInfo = () => {
                 className="hover:underline"
               >
                 
-                Email
+                rajeshpasi447@gmail.com
               </EmailLink>
             </Typography>
           </div>
